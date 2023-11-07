@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "dd-sdk-swift-testing",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DataDog/dd-sdk-swift-testing.git",
+      "state" : {
+        "revision" : "bada9880894ed132c22c8cece5cd0d0d50ddb5ef",
+        "version" : "2.3.2"
+      }
+    }
+  ],
+  "version" : 2
+}

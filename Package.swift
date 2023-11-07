@@ -5,11 +5,17 @@ import PackageDescription
 
 let package = Package(
     name: "Example",
+    platforms: [
+        .macOS(.v12)
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "Example",
             targets: ["Example"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/DataDog/dd-sdk-swift-testing.git", from: "2.2.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -18,6 +24,9 @@ let package = Package(
             name: "Example"),
         .testTarget(
             name: "ExampleTests",
-            dependencies: ["Example"]),
+            dependencies: [
+                "Example",
+                .product(name: "DatadogSDKTesting", package: "dd-sdk-swift-testing")
+            ]),
     ]
 )
